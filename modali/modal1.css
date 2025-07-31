@@ -1,0 +1,33 @@
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background:  rgba(0, 0, 0, 0.2);
+  
+}
+
+.modal-content {
+  background: whitesmoke;
+  margin: 15% auto;
+  padding: 20px;
+  width: 60%;
+  height:40%;
+  max-width:1000px;
+  min-width:400px;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 30px 30px 20px rgba(10, 10, 10, 0.693);
+}
+
+#zatvoriModal {
+  position: absolute;
+  top: 15px; right: 25px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#zatvoriModal:hover{
+  box-shadow: 10px 10px 10px black;;
+}
