@@ -1,0 +1,251 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-image: url("Hyundai.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 100vh;
+}
+
+.meni ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: darkred;
+  box-shadow: 20px 20px 20px gray;
+}
+
+/* Glavni meni - horizontalni deo*/
+.meni > ul {
+  display: flex;
+}
+
+/* Glavne opcije */
+.meni > ul > li {
+  position: relative;
+  padding: 14px 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.meni > ul > li:hover  {
+  background-color:black;
+}
+
+/* Linkovi u podmeniju */
+.podmeni li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+}
+
+/* Podmeni - skriven po defaultu */
+.podmeni {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  
+  min-width: 160px;
+  z-index: 100;
+  box-shadow: 20px 20px 20px gray;
+  border: solid 5px darkred;
+  border-radius: 7px;
+}
+
+/* Kada je hover nad roditeljem, prikazuje se podmeni */
+.meni li:hover > .podmeni {
+  display: block;
+}
+
+/* Stil hovera unutar podmenija */
+
+.podmeni li:hover {
+  background-color: lavender;
+}
+.podmeni li:hover a {
+    color:darkred;
+}
+
+/* ---------------------           iframe          --------------------*/
+
+#zatvori-btn
+{
+  display:none;
+  background-color: royalblue;
+  color: white;
+  padding: 10px 17px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  position:absolute;
+  top: 100px;
+  right: 100px;
+  z-index:101;
+  transition: all 0.5s ease;
+}
+#zatvori-btn:hover
+{
+  background-color: navy;
+  box-shadow: 10px 10px 10px gray;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+
+#content-frame 
+{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;         /* cela širina prozora */
+  height: 100%;        /* cela visina prozora */
+  border: none;
+  pointer-events: none;
+  opacity: 0.9;
+  z-index: 100;         /*da bude iznad svega */
+}
+
+
+
+
+/*        -------------------  ////////////   MODAL - 2  ////////  ---------------        */
+.modal-2 {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-2-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  width: 90%;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* GALERIJA *********************************** ------------------*********------------*/
+
+
+
+.galerija {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  justify-content: center;
+}
+
+.galerija-img {
+  width:100%;
+  max-width: 150px;
+  height: 100px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+ 
+}
+
+.galerija-img:hover 
+{
+  outline: 2px solid red;
+  transform: scale(1.2);
+  transform-origin: center top;
+  background-color: red;
+  
+}
+
+.slika-kontejner 
+{
+  margin: 10px;
+  position: relative;
+  overflow: visible;
+  z-index: 5;
+  outline: 1px dashed orange;
+}
+
+.slika-ime, .slika-autor 
+{
+  font-family: Arial, sans-serif;
+  font-size: 0.9em;
+  color: #444;
+  margin-top: 4px;
+}
+
+/* definišemo broj kolona u jednom redu galerije*/
+#galerijaSlika 
+{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 kolona */
+  gap: 15px; /* razmak između slika */
+  justify-content: center;
+}
+
+
+/*-------------------------------------------------------------------------------------------*/
+/* Modal pozadina */
+
+
+/*   DETALJI O SLICI -  UVECANA SLIKA   */
+
+.modal-content-detalji
+{
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.informacije 
+{
+  width: 25%;
+  padding-right: 20px;
+  padding-left: 30px;
+  background-color: white;
+  
+}
+
+.uvecana-slika img 
+{
+  height: auto;
+  border: 6px solid royalblue;
+
+  max-width: 100%;            /* Zauzima max 70% širine prozora */
+  height: auto;              /* Zadržava proporcije pri uvećanju */
+  object-fit: contain;       /* Osigurava da se sadržaj ne seče ni pri promeni dimenzija */
+  display: block;
+  
+}
+
+.close
+{
+  position: absolute;
+  top:20px;
+  right: 20px;
+  text-decoration: blink;
+  color:gray;
+  float: right;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.close:hover
+{
+  font-size: 3em;
+  font-weight:bold;
+  color:red;
+}
