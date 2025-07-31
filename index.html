@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <title>Meni sa modalom</title>
+  <link rel="stylesheet" href="css/stil.css">
+</head>
+<body>
+    
+<nav class="meni">
+  <ul>
+    <li><label>Opcija 1</label>
+      <ul class="podmeni">
+        <li><a href="#" id="pregledSlika">Pregled slika</a></li>
+        <li><a href="#">Podopcija 1.2</a></li>
+      </ul>
+    </li>
+    <li>Opcija 2
+      <ul class="podmeni">
+        <li><a href="#">Podopcija 2.1</a></li>
+        <li><a href="#">Podopcija 2.2</a></li>
+        <!--  Opcija podmenija za pokretanje iFrame za upis novih slika:  id="id_upis"  -->
+        <li id="id_upis"><a href="#">Upis novih slika</a></li>
+      </ul>
+    </li>
+    <li>Opcija 3
+      <ul class="podmeni">
+        <li><a href="#">Podopcija 3.1</a></li>
+        <li><a href="#" id="otvoriModal">Prikaži modal...</a></li>
+        <li><a href="#">Podopcija 3.3</a></li>
+      </ul>
+    </li>
+    <li>Opcija 4
+      <ul class="podmeni">
+        <li><a href="#">Podopcija 4.1</a></li>
+        <li><a href="#">Podopcija 4.2</a></li>
+        <li onclick="DrugiModal()"><a href="#">Drugi modal</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+<div class="okvirIframe" >
+  <!-- Dugme za zatvaranje -->
+  <button id="zatvori-btn">  Zatvori prikaz &nbsp; &nbsp; ❌</button>
+  <!--iframe FORMA ZA UPIS PODATAKA O SLICI-->
+  <iframe id="content-frame" src=""></iframe>
+</div>
+
+
+<div id="containerModal"></div>
+
+<!-- Galerija Modal -->
+  <div id="galerijaModal" class="modal-2">
+    <div class="modal-2-content">
+      <span class="close" id="zatvoriGaleriju">&times;</span>
+      <div id="galerijaSlika" class="galerija"></div>
+    </div>
+  </div>
+
+  <!-- Detalji Modal - kad uvećamo sliku  DETALJI   -->
+  <div id="detaljiModal" class="modal-2">
+    <div class="modal-content-detalji">
+      <span class="close" id="zatvoriDetalje">&times;</span>
+      <div class="informacije" id="informacijeSlike"></div>
+      <div class="uvecana-slika">
+        <img id="uvecanaSlika" src="" alt="Uvećana slika" />
+      </div>
+    </div>
+  </div>  
+
+<script src="js/skripta.js"></script>
+</body>
+</html>
